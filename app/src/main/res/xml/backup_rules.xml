@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Automatyczna kopia Androida 6-11 (android:fullBackupContent). VivaPilot 1.20:
+    do kopii Google trafia WYŁĄCZNIE znacznik początku okresu próbnego (plik
+    trial_marker.xml, sama data). Gdy jest jakikolwiek "include", reszta nie jest kopiowana.
+    Dla pewności jawnie wykluczamy: dane aplikacji (iptv_store: źródła treści z hasłami,
+    listy, ulubione), rejestr zgód, zapis awarii, cache i pobrane pliki.
+-->
+<full-backup-content>
+    <include domain="sharedpref" path="trial_marker.xml" />
+    <exclude domain="sharedpref" path="iptv_store.xml" />
+    <exclude domain="sharedpref" path="consent_pending.xml" />
+    <exclude domain="file" path="consent_vault.bin" />
+    <exclude domain="file" path="crash_logs" />
+    <exclude domain="database" path="." />
+    <exclude domain="cache" path="." />
+    <exclude domain="external" path="." />
+</full-backup-content>

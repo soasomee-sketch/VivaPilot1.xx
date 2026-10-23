@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Automatyczna kopia i przenoszenie danych Androida 12+ (android:dataExtractionRules).
+    VivaPilot 1.20: w obu sekcjach (cloud-backup i device-transfer) kopiowany jest WYŁĄCZNIE
+    znacznik okresu próbnego (trial_marker.xml). Reszta jest jawnie wykluczona.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="sharedpref" path="trial_marker.xml" />
+        <exclude domain="sharedpref" path="iptv_store.xml" />
+        <exclude domain="sharedpref" path="consent_pending.xml" />
+        <exclude domain="file" path="consent_vault.bin" />
+        <exclude domain="file" path="crash_logs" />
+        <exclude domain="database" path="." />
+        <exclude domain="external" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="sharedpref" path="trial_marker.xml" />
+        <exclude domain="sharedpref" path="iptv_store.xml" />
+        <exclude domain="sharedpref" path="consent_pending.xml" />
+        <exclude domain="file" path="consent_vault.bin" />
+        <exclude domain="file" path="crash_logs" />
+        <exclude domain="database" path="." />
+        <exclude domain="external" path="." />
+    </device-transfer>
+</data-extraction-rules>
